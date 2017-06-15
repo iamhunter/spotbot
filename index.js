@@ -86,7 +86,7 @@ rtm.on(RTM_EVENTS.MESSAGE, function handleRtmMessage(message) {
             }
         }
     }
-    if(message.channel === "G5S92EDT2" && message.text != null)
+    if(message.channel === "C2A4ZS1T7" && message.text != null)
     {
         var splitText = message.text.split(' ');
         
