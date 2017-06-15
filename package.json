@@ -1,0 +1,22 @@
+{
+  "name": "slack-music",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "version": "0.0.1",
+  "description": "Save spotify links in a slack channel to a Spotify playlist",
+  "main": "index.js",
+  "dependencies": {
+    "@slack/client": "^3.10.0",
+    "async": "^0.2.10",
+    "express": "^3.2.6",
+    "socket.io": "^0.9.17",
+    "spotify-web-api-node": "^2.4.0"
+  },
+  "devDependencies": {},
+  "author": "Andrew Hunter",
+  "license": "MIT",
+  "engines": {
+    "node": "7.10.0"
+  }
+}
