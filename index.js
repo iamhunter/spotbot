@@ -67,7 +67,7 @@ rtm.on(CLIENT_EVENTS.RTM.AUTHENTICATED, function (rtmStartData) {
 });
 
 rtm.on(RTM_EVENTS.MESSAGE, function handleRtmMessage(message) {
-    if(message.channel === "C2A4ZS1T7" && message.text != null)
+    if(message.channel === process.env.SLACK_CHANNEL && message.text != null)
     {
         console.log("Message posted in correct channel");
         var splitText = message.text.split('/');
@@ -77,7 +77,10 @@ rtm.on(RTM_EVENTS.MESSAGE, function handleRtmMessage(message) {
             {
                 var trackURI = splitText[i+1].substring(0,22);
                 //rtm.sendMessage("Hello <@" + message.user + ">! Your track is " + trackURI, message.channel);
-                spotifyApi.addTracksToPlaylist('1219537564', '12BtcvGyfX0ieTKsSvyNe2', ["spotify:track:" + trackURI])
+                spotifyApi.addTracksToPlaylist('1219537564', '12BtcvGyfX0ieTKsSvyNe2', ["spotify:track:" + trackURI], 
+                {
+                  position : 1
+                })
                     .then(function(data) {
                         console.log('Added tracks to playlist!');
                     }, function(err) {
@@ -86,7 +89,7 @@ rtm.on(RTM_EVENTS.MESSAGE, function handleRtmMessage(message) {
             }
         }
     }
-    if(message.channel === "C2A4ZS1T7" && message.text != null)
+    if(message.channel === process.env.SLACK_CHANNEL && message.text != null)
     {
         var splitText = message.text.split(' ');
         
